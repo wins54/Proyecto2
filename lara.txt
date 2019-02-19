@@ -1,0 +1,134 @@
+PS C:\Users\winst\Desktop\Prototipo> cd .\prototipo\
+PS C:\Users\winst\Desktop\Prototipo\prototipo> php artisan make:migration create_tRol_table --create=tRol
+Created Migration: 2018_07_06_051422_create_t_rol_table
+PS C:\Users\winst\Desktop\Prototipo\prototipo> php artisan make:migration create_tmunicipio_table --create=tmunicipio
+Created Migration: 2018_07_06_051510_create_tmunicipio_table
+PS C:\Users\winst\Desktop\Prototipo\prototipo> php artisan make:migration create_tEntidad_table --create=tEntidad
+Created Migration: 2018_07_06_052153_create_t_entidad_table
+PS C:\Users\winst\Desktop\Prototipo\prototipo>
+php artisan make:controller LoginController --resource --model=Login
+php artisan make:controller UsuarioController --resource --model=Usuario
+
+php artisan make:migration create_tIndice_table --create=tIndice
+php artisan make:migration create_tDepartamento_table --create=tDepartamento
+php artisan make:migration create_tMedicion_table --create=tMedicion
+php artisan make:migration create_tPilar_table --create=tPilar
+php artisan make:migration create_tIndicador_table --create=tIndicador
+php artisan make:migration create_tResultados_table --create=tResultados
+php artisan make:migration create_tIndicaRespuestas_table --create=tIndicaRespuestas
+
+php artisan make:auth
+
+php artisan make:controller ItemAjaxController --resource --model=ItemAjax
+use Illuminate\Support\Facades\DB;
+public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+use Illuminate\Support\ServiceProvider;
+-------------------------------------------------
+<script>
+    export default {
+ data (){
+
+            return {
+              arraydepa:[],
+              busca:"",
+            }}
+        ,
+         methods: {
+
+lista() {
+      let me = this;
+      axios .get("/datos").then(function(response) {
+           me.arraydepa=response.data.almacen;
+
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  /**  
+    ,
+agregar(){
+          let me = this;
+axios.post("/nuevosdatos", {
+       //nomcliente:nomcliente
+        })
+        .then(function(response) {
+          // window.location.href = '/';
+          console.log(response);
+          //me.producto = "",
+           me.lista();
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+},
+editar(){
+          let me = this;
+axios.post("/editardatos", {
+       //nomcliente:nomcliente
+        })
+        .then(function(response) {
+          // window.location.href = '/';
+          console.log(response);
+          //me.producto = "",
+           me.lista();
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+},
+eliminar(){
+          let me = this;
+axios.post("/eliminardatos", {
+       //nomcliente:nomcliente
+        })
+        .then(function(response) {
+          // window.location.href = '/';
+          console.log(response);
+          //me.producto = "",
+           me.lista();
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+}
+*/
+         },
+         computed: {
+  /**  filtrar: function () 
+    {
+     // return this.arraypedido.filter((detalle)=>{
+     //   return detalle.nombrecli.match(this.busca);
+     //});
+    },
+    totales: function() {
+      let me= this;
+      }
+*/
+         }
+        ,
+        mounted() {
+            this.lista();
+        }
+    }
+</script>
+----------------------------------------------
+
+
+php artisan make:migration create_talla_table --create=talla
+php artisan make:migration create_producto_table --create=producto
+php artisan make:migration create_almacen_table --create=almacen
+
+
+php artisan make:migration create_cliente_table --create=cliente
+php artisan make:migration create_detalle_table --create=detalle
+php artisan make:migration create_pedido_table --create=pedido
+php artisan make:migration create_pago_table --create=pago
+
+php artisan make:controller productoController --resource
+php artisan make:controller pedidoController --resource
+
+npm install apexcharts --save
